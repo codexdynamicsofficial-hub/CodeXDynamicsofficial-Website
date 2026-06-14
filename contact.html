@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="Author" content="Muhammad Jawad Ahmed">
-    <meta name="Description" content="Reach out to CodeXDynamics, the leading software house in Karachi. Contact us for web development, app development, and digital marketing services.">
-    <meta name="keywords" content="contact software house Karachi, hire web developer Pakistan, IT consultation, CodeXDynamics contact, WhatsApp">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Get a Free Quote - CodeXDynamics Karachi</title>
-    <link rel="stylesheet" href="contact.css">
-    <link rel="stylesheet" href="responsive.css">
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="Author" content="Muhammad Jawad Ahmed">
+  <meta name="Description" content="Reach out to CodeXDynamics, the leading software house in Karachi. Contact us for web development, app development, and digital marketing services.">
+  <meta name="keywords" content="contact software house Karachi, hire web developer Pakistan, IT consultation, CodeXDynamics contact, WhatsApp">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Get a Free Quote - CodeXDynamics Karachi</title>
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="responsive.css">
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -48,27 +48,29 @@
 <section class="contact-section">
   <!-- Left: Contact Form -->
   <div class="contact-form slide-left">
-    <!-- Form tag mein action aur method add karo -->
-<form action="sendemail.php" method="POST">
+    <!-- Form tag fixed: action/method hata diye, id aur onsubmit add kiya -->
+<form id="contactForm" onsubmit="return false;">
   
-  <!-- Har input mein "name" attribute add karo -->
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <input type="text" name="phone" placeholder="Phone / WhatsApp" required>
-  <input type="text" name="business" placeholder="Business Name" required>
-  <input type="text" name="website" placeholder="Website Link">
+  <!-- Sab inputs mein 'id' add kar diya gaya hai JS ke liye -->
+  <input type="text" name="name" id="name" placeholder="Your Name" required autocomplete="name">
+  <input type="email" name="email" id="email" placeholder="Your Email" required autocomplete="email">
+  <input type="text" name="phone" id="phone" placeholder="Phone / WhatsApp" required autocomplete="tel">
+  <input type="text" name="business" id="business" placeholder="Business Name" autocomplete="organization">
+  <input type="text" name="website" id="website" placeholder="Website Link" autocomplete="url">
   
-  <select name="contact_method" required>
+  <select name="contact_method" id="contactMethod" required>
     <option value="">Please Choose an Option</option>
     <option value="whatsapp">WhatsApp</option>
-    
     <option value="email">Email</option>
   </select>
   
-  <textarea name="best_time" placeholder="Best time to contact" rows="3"></textarea>
-  <textarea name="details" placeholder="Additional Details" rows="5"></textarea>
+  <textarea name="best_time" id="time" placeholder="Best time to contact" rows="3"></textarea>
+  <textarea name="details" id="details" placeholder="Additional Details" rows="5"></textarea>
   
   <button type="submit">Send Message</button>
+
+  <!-- Thank you message wala div add kiya hai -->
+  <div id="thankYouMsg" class="thank-you" style="display:none;"></div>
 </form>
   </div>
 
@@ -191,5 +193,5 @@
 
     </div>
 </footer>
-
-  
+</body>
+</html>
