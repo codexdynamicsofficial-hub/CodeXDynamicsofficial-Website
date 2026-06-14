@@ -1,0 +1,301 @@
+/* ===============================
+   BASIC RESET & NAVBAR
+================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile Menu Logic */
+@media (max-width:768px){
+  .nav-links{
+    display: flex; 
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    background: black;
+    text-align: center;
+    z-index: 1000;
+    
+    transform: none; 
+    
+    /* Hidden State */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    padding: 0; 
+  }
+
+  /* Open State */
+  .nav-links.active{
+    max-height: 500px; 
+    padding: 10px 0; 
+  }
+
+  .hamburger{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .hamburger span{
+    width: 25px;
+    height: 3px;
+    background: white;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .nav-links li{
+    padding: 15px 0;
+    opacity: 1; /* Links dikhengi */
+  }
+}
+
+/* ===============================
+   HERO IMAGE
+================================ */
+.image {
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+@media (max-width: 768px) { .image { min-height: 250px; } }
+@media (max-width: 360px) { .image { min-height: 210px; } }
+
+/* ===============================
+   SERVICES BAR (NEW FIX)
+================================ */
+@media (max-width: 768px) {
+  .services-bar {
+    flex-wrap: wrap; /* Items neeche a jayenge agar space nahi hoga */
+    gap: 10px;
+    padding: 10px;
+  }
+  .services-bar a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-bar {
+    gap: 8px;
+    padding: 8px;
+  }
+  .services-bar a {
+    font-size: 12px; /* Chhota font mobile pe */
+    padding: 5px 10px;
+    border-width: 1px;
+  }
+}
+
+/* ===============================
+   PORTFOLIO SLIDER (UPDATED)
+================================ */
+@media screen and (max-width: 768px) {
+  .slider-wrapper { padding: 0 45px; }
+  
+  .portfolio-container {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+    padding-bottom: 15px;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+  }
+  .portfolio-container::-webkit-scrollbar { display: none; }
+
+  .portfolio-card { 
+    min-width: 300px; 
+    width: 300px;
+    height: 330px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+  
+  .slider-btn { width: 40px; height: 40px; font-size: 16px; }
+  .portfolio-header h1 { font-size: 30px; }
+}
+
+@media (max-width: 480px) {
+  .slider-wrapper { padding: 0 35px; }
+  .portfolio-card { min-width: 260px; width: 260px; height: 280px; }
+}
+
+@media (max-width: 320px) {
+  .slider-wrapper { padding: 0 10px; }
+  .slider-btn { width: 25px; height: 25px; font-size: 10px; }
+  .portfolio-card { min-width: 220px; width: 220px; height: 240px; }
+}
+
+/* ===============================
+   EXPERTISE SLIDER
+================================ */
+@media (max-width: 1024px) {
+  .slider-wrapper {
+    padding: 0 45px;
+  }
+  
+  .expertise-icons {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+    padding-bottom: 15px;
+    scroll-snap-type: x mandatory;
+    
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+  }
+  .expertise-icons::-webkit-scrollbar { display: none; }
+
+  .expert-box {
+    min-width: 260px; 
+    width: 260px;
+    height: auto !important;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 25px 20px;
+    overflow: visible;
+  }
+
+  .expert-box p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  .slider-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    display: flex; 
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-wrapper { padding: 0 35px; }
+  .expert-box { min-width: 230px; width: 230px; }
+}
+
+@media (max-width: 320px) {
+  .slider-wrapper { padding: 0 10px; }
+  .slider-btn { width: 25px; height: 25px; font-size: 10px; }
+  .expert-box { min-width: 200px; width: 200px; padding: 15px 10px; }
+  .expert-box h3 { font-size: 0.9rem; }
+  .expert-box p { font-size: 0.75rem; }
+}
+
+/* ===============================
+   SERVICES & ABOUT (GENERAL)
+================================ */
+@media (max-width: 768px){
+  .about { flex-direction: column; padding: 60px 20px; }
+  .image-box { margin-top: 30px; }
+  .image-box img { max-width: 100%; height: auto; }
+  
+  .services-showcase{ padding:80px 5%; }
+  .service-row{ flex-direction:column; gap:40px; margin-bottom:80px; }
+  .service-text{ width:100%; text-align:center; }
+  .service-text h2{ font-size:32px; }
+  .service-text li{ text-align:left; }
+  .service-media{ width:100%; grid-template-columns:1fr; }
+  .big-img{ height:280px; }
+  .small-imgs{ grid-template-columns:repeat(3,1fr); }
+  .small-imgs img{ height:100px; }
+
+  .footer-container { grid-template-columns: 1fr; gap: 25px; padding: 0 20px 40px; }
+}
+
+@media (max-width:480px){
+  .services-showcase{ padding:60px 20px; }
+  .service-text h2{ font-size:26px; }
+  .big-img{ height:220px; }
+  .small-imgs img{ height:80px; }
+}
+@media (max-width:320px){
+  .service-text h2{ font-size:22px; }
+  .big-img{ height:200px; }
+  .small-imgs img{ height:70px; }
+}
+
+/* ===============================
+   ABOUT HERO & CONTACT
+================================ */
+.about-hero {
+  padding: 180px 20px 120px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), url("https://media.istockphoto.com/id/1410053593/vector/abstract-black-with-wavy-line-dimension-overlap-background-eps10-vector.jpg?s=612x612&w=0&k=20&c=hIxfFVp9eRtxmEPNmij5f65CufUh6yRiIU0SfSS446A=") center/cover no-repeat;
+  min-height: 500px;
+}
+@media (max-width: 768px) {
+  .about-hero { min-height: 350px; background-size: contain; }
+  .about-hero h1 { font-size: 36px; }
+  .about-hero p { font-size: 14px; margin: 15px auto 0; }
+}
+@media (max-width: 360px) {
+  .about-hero { min-height: 280px; }
+  .about-hero h1 { font-size: 28px; }
+  .about-hero p { font-size: 12px; padding: 0 10px; }
+}
+
+@media (max-width: 768px) {
+  .contact-section { flex-direction: column; gap: 30px; padding: 0 20px 50px; }
+  .contact-form, .contact-info { flex: 1 1 100%; padding: 30px 20px; }
+  .contact-hero h1 { font-size: 2.5rem; }
+  .contact-info h2 { font-size: 2rem; }
+}
+@media (max-width: 480px) {
+  .contact-section { padding: 0 15px 40px; gap: 20px; }
+  .contact-hero { padding: 60px 15px 30px; }
+  .contact-hero h1 { font-size: 2rem; }
+  .contact-form, .contact-info { padding: 20px 15px; }
+}
+
+/* ===============================
+   REVIEW BOX MOBILE
+================================ */
+@media (max-width: 480px) {
+  .floating-review-container {
+    width: calc(100% - 20px);
+    left: 100%; right: auto; bottom: 10px;
+    height: auto; max-height: 70vh;
+    border-radius: 8px;
+    transition: left 0.4s ease-in-out;
+  }
+  .floating-review-container.show-up { left: 10px; }
+  .review-header { padding: 8px 12px; }
+  .review-form-body { padding: 10px; }
+  .toggle-review-btn { width: 40px; height: 40px; font-size: 20px; bottom: 10px; right: 10px; }
+}
+
+/* Lazy Load Placeholder */
+.lazy-load-placeholder {
+    background: linear-gradient(90deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}

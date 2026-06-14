@@ -1,0 +1,634 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  overflow-x: hidden;   /* IMPORTANT */
+}
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+/* Navbar */
+.navbar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: hsl(0, 0%, 0%);
+    display: flex;
+    align-items: center;
+    z-index: 999;
+    justify-content:space-between;
+    padding:0 0px;
+}
+
+/* Logo Left */
+.logo img {
+    height: 60px;
+}
+
+/* Center Menu */
+.nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+/* underline */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: #60a5fa;
+    transition: width 0.3s ease;
+}
+
+/* hover effect */
+.nav-links a:hover {
+    color: #60a5fa;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+.hamburger{
+display:none;
+flex-direction:column;
+cursor:pointer;
+gap:5px;
+}
+
+.hamburger span{
+width:25px;
+height:3px;
+background:white;
+display:block;
+}
+
+.image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.image img {
+  width: 100%;        /* full width of container */
+  height: auto;       /* maintain aspect ratio */
+  max-width: 100%;    /* prevent overflow */
+  object-fit: contain; /* no crop, image fully visible */
+}
+
+
+.about-hero h1 {
+  font-size: 60px;
+  letter-spacing: 2px;
+}
+
+
+.about-hero p {
+  max-width: 600px;
+  margin: 20px auto 0;
+}
+
+/* About Section */
+.about {
+  padding: 100px 40px;
+  background-color: #111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+.about-content {
+  max-width: 600px;
+  opacity: 0;
+  transform: translateX(-100px); /* slide from left */
+  transition: all 1s ease;
+}
+
+.about-content.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.about h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 22px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+.image-box {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.image-box img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 30px;
+}
+
+/* animation: right → inside */
+.slide-right {
+  opacity: 0;
+  transform: translateX(120px);  /* start from right */
+}
+
+.slide-right.show {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 1s ease;
+}
+
+
+
+/* ===============================
+   TEAM SECTION
+================================ */
+
+.team-section {
+  padding: 120px 40px;
+  background: hsl(0, 0%, 0%);
+  color: white;
+  text-align: center;
+}
+
+.team-header h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  color: #60a5fa;
+  text-shadow: 0 0 15px rgba(96,165,250,0.6);
+}
+
+.team-header p {
+  opacity: 0.7;
+  margin-bottom: 60px;
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.team-card {
+  background: linear-gradient(145deg, #111, #0a0a0a);
+  width: 320px;
+  padding: 30px 25px;
+  border-radius: 20px;
+  transition: 0.4s ease;
+  border: 1px solid rgba(96,165,250,0.15);
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(96,165,250,0.25);
+}
+
+.team-img {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #60a5fa;
+  box-shadow: 0 0 20px rgba(96,165,250,0.4);
+}
+
+.team-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-card h3 {
+  margin: 10px 0 5px;
+  font-size: 22px;
+}
+
+.team-card span {
+  display: block;
+  font-size: 14px;
+  color: #60a5fa;
+  margin-bottom: 15px;
+}
+
+.team-card p {
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 1.6;
+}
+
+
+/* ===============================
+   STATS SECTION
+================================ */
+
+.stats-section {
+  padding: 120px 40px;
+  background: hsl(0,0%,0%);
+  text-align: center;
+  color: white;
+}
+
+.stats-header h2 {
+  font-size: 42px;
+  color: #60a5fa;
+  text-shadow: 0 0 15px rgba(96,165,250,0.6);
+  margin-bottom: 10px;
+}
+
+.stats-header p {
+  opacity: 0.7;
+  margin-bottom: 60px;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.stat-box {
+  background: linear-gradient(145deg, #111, #0a0a0a);
+  padding: 40px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(96,165,250,0.15);
+  transition: 0.4s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(96,165,250,0.25);
+}
+
+.stat-box h3 {
+  font-size: 48px;
+  color: #60a5fa;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px rgba(96,165,250,0.7);
+}
+
+.stat-box span {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+
+/* ===============================
+   CTA SECTION
+================================ */
+
+.cta-section {
+  background: hsl(0,0%,0%);
+  padding: 120px 40px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(96,165,250,0.15), rgba(96,165,250,0.3), rgba(96,165,250,0.15));
+  transform: skewX(-20deg);
+  animation: cta-glow 4s linear infinite;
+  z-index: 0;
+}
+
+@keyframes cta-glow {
+  0% { transform: translateX(-200%) skewX(-20deg); }
+  100% { transform: translateX(200%) skewX(-20deg); }
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-section h2 {
+  font-size: 48px;
+  color: #60a5fa;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(96,165,250,0.6);
+}
+
+.cta-section p {
+  font-size: 18px;
+  opacity: 0.8;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 15px 40px;
+  background: #60a5fa;
+  color: white;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 18px;
+  box-shadow: 0 0 20px rgba(96,165,250,0.5);
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 30px rgba(96,165,250,0.7);
+}
+
+
+.site-footer {
+  background: radial-gradient(circle at top, #111, #050505);
+  padding-top: 80px;
+  color: #ccc;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 45px;
+  padding: 0 20px 60px;
+}
+
+.footer-box h3 {
+  color: #60a5fa;
+  font-size: 1.9rem;
+}
+
+.footer-box h4 {
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.footer-line {
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(90deg,#60a5fa,transparent);
+  margin: 10px 0 20px;
+}
+
+.footer-box p {
+  line-height: 1.7;
+  font-size: .95rem;
+}
+
+.footer-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Footer contact list items ko flex bana do */
+.footer-box ul li {
+  display: flex;
+  align-items: center; /* Ye icon ko vertical center karega */
+  gap: 8px; /* Icon aur text ke beech gap */
+  margin-bottom: 10px;
+  font-size: .95rem;
+}
+
+.footer-box ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.footer-box ul li a:hover {
+  color: #60a5fa;
+  padding-left: 6px;
+}
+
+.footer-contact i {
+  color: #60a5fa;
+  margin-right: 8px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.footer-social a {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #111;
+  color: #ccc;
+  font-size: 1.1rem;
+  transition: .35s;
+  box-shadow: 0 0 0 transparent;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: #fff;
+  background: #60a5fa;
+  box-shadow: 0 0 15px #60a5fa;
+  transform: translateY(-4px);
+}
+
+.footer-bottom {
+  border-top: 1px solid #222;
+  text-align: center;
+  padding: 22px;
+  font-size: .9rem;
+  background: #030303;
+}
+.footer-logo {
+  width: 170px;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 0 8px rgba(96,165,250,.6));
+  transition: .3s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 14px rgba(96,165,250,1));
+}
+
+
+
+
+
+
+/* Floating Review Box Styles */
+.floating-review-container {
+    position: fixed;
+    bottom: 20px;
+    right: -400px; /* Initially hidden outside screen */
+    width: 350px;
+    height: 500px;
+    background-color: #000000; /* Black Background */
+    border: 2px solid #60a5fa; /* Blue Border */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    z-index: 9999;
+    transition: right 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Jab yeh class lag jaye to box dikhayi de (JS se control hoga) */
+.floating-review-container.show-up {
+    right: 20px;
+}
+
+/* Header Styling */
+.review-header {
+    background-color: #60a5fa; /* Blue Header */
+    color: white;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #60a5fa;
+}
+
+.review-header h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.close-review-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Form Styling */
+.review-form-body {
+    padding: 15px;
+    background-color: #111; /* Dark Black */
+}
+
+.review-form-body input, 
+.review-form-body textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #222;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.review-form-body button {
+    width: 100%;
+    padding: 10px;
+    background-color: #60a5fa;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.review-form-body button:hover {
+    background-color: #60a5fa;
+}
+
+/* Reviews List Styling */
+.reviews-list-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: black; /* White/Light Grey for list */
+}
+
+.review-item {
+    background: white;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-left: 3px solid #60a5fa;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.review-item .author {
+    font-weight: bold;
+    color: #60a5fa;
+    font-size: 14px;
+}
+
+.review-item .text {
+    color: #333;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* The Toggle Button (To open box again if closed) */
+.toggle-review-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #60a5fa;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 9998;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    display: none; /* Hidden by default, shown via JS */
+}
