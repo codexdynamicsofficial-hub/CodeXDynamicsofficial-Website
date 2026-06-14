@@ -63,7 +63,7 @@ html, body {
 }
 
 /* ===============================
-   HERO IMAGE
+   HERO IMAGE & TEXT FIX
 ================================ */
 .image {
   width: 100%;
@@ -73,8 +73,30 @@ html, body {
   background-repeat: no-repeat;
   background-position: center top;
 }
-@media (max-width: 768px) { .image { min-height: 250px; } }
-@media (max-width: 360px) { .image { min-height: 210px; } }
+
+/* Hero Text Glare & Break Fix (Responsive) */
+.image h1 {
+  color: #ffffff !important; /* White color, no blue */
+  text-shadow: none !important; /* Chamak hata di */
+  letter-spacing: 1px !important;
+}
+
+.image p {
+  color: #f0f0f0 !important; /* Soft white, no blue */
+  font-weight: normal !important; /* Bold hata diya taake chamak na kare */
+  text-shadow: none !important; /* Chamak hata di */
+}
+
+@media (max-width: 768px) { 
+  .image { min-height: 250px; } 
+  .image h1 { font-size: 2rem !important; } /* 320px par smooth size */
+  .image p { font-size: 0.95rem !important; }
+}
+@media (max-width: 360px) { 
+  .image { min-height: 210px; }
+  .image h1 { font-size: 1.8rem !important; } 
+  .image p { font-size: 0.85rem !important; }
+}
 
 /* ===============================
    SERVICES BAR (NEW FIX)
@@ -270,23 +292,6 @@ html, body {
   .contact-hero { padding: 60px 15px 30px; }
   .contact-hero h1 { font-size: 2rem; }
   .contact-form, .contact-info { padding: 20px 15px; }
-}
-
-/* ===============================
-   REVIEW BOX MOBILE
-================================ */
-@media (max-width: 480px) {
-  .floating-review-container {
-    width: calc(100% - 20px);
-    left: 100%; right: auto; bottom: 10px;
-    height: auto; max-height: 70vh;
-    border-radius: 8px;
-    transition: left 0.4s ease-in-out;
-  }
-  .floating-review-container.show-up { left: 10px; }
-  .review-header { padding: 8px 12px; }
-  .review-form-body { padding: 10px; }
-  .toggle-review-btn { width: 40px; height: 40px; font-size: 20px; bottom: 10px; right: 10px; }
 }
 
 /* Lazy Load Placeholder */
