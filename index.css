@@ -272,14 +272,19 @@ display:block;
   line-height: 1.5;
 }
 
-.contact-section {
-  margin-top: 50px;
+/* ===============================
+   OUR SECTION CTA (Core Values ke neeche)
+================================ */
+.our-cta {
+  margin-top: 40px; /* Core values ke saath close rakha hai */
+  padding: 20px 0; /* Compact padding */
+  text-align: center;
 }
 
-.contact-section p {
+.our-cta p {
   font-size: 1.1rem;
   color: #aaa;
-  margin-bottom: 15px;
+  margin-bottom: 20px; /* Text aur button ke beech space */
 }
 
 .contact-btn {
@@ -299,7 +304,6 @@ display:block;
   background-color: #3b82f6;
   color: #fff;
 }
-
 .expertise {
   text-align: center;
   margin-top: 60px;
