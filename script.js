@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(counter);
   });
 
-  /* ===================== Contact Form Submit (Merged & Fixed) ===================== */
+  /* ===================== Contact Form Submit (Desktop Fix Added) ===================== */
   const contactForm = document.getElementById("contactForm");
   
   if(contactForm){
@@ -167,7 +167,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const whatsappNumber = "923223922370"; 
         const url = `https://wa.me/${whatsappNumber}?text=${waMessage}`;
-        window.open(url, "_blank"); 
+        
+        // FIX: Pop-up block hone se bachne ke liye window.open ki jagah window.location.href use kiya
+        window.location.href = url; 
 
         if(thankYou) {
             contactForm.style.display = 'none';
