@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(counter);
   });
 
-  /* ===================== Contact Form Submit (Desktop Fix Added) ===================== */
+  /* ===================== Contact Form Submit (Desktop Fix + Email Fix Added) ===================== */
   const contactForm = document.getElementById("contactForm");
   
   if(contactForm){
@@ -177,11 +177,11 @@ document.addEventListener("DOMContentLoaded", () => {
             thankYou.innerHTML = "✅ Thank you! Aap WhatsApp par redirect ho rahe hain. Hamari team jaldi aap se contact karegi.";
         }
       } else {
-        // Email ka message
+        // Email ka message (FIXED: \n use kiya aur encode kiya)
         let subject = `New Contact Request from ${name}`;
-        let body = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0ABusiness: ${business}%0AWebsite: ${website}%0ABest Time: ${time}%0ADetails: ${details}`;
+        let body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nBusiness: ${business}\nWebsite: ${website}\nBest Time: ${time}\nDetails: ${details}`;
         
-        const mailtoLink = `mailto:codexdynamicsofficial@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+        const mailtoLink = `mailto:codexdynamicsofficial@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         window.location.href = mailtoLink;
 
         if(thankYou) {
